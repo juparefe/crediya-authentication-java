@@ -11,6 +11,14 @@ spring:
       path: "/h2"
   profiles:
     include: null
+  adapters:
+    r2dbc:
+      host: "aaaa"
+      port: "aaaa"
+      database: "aaaa"
+      schema: "public"
+      username: "aaaa"
+      password: "aaaa"
 management:
   endpoints:
     web:

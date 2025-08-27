@@ -1,9 +1,10 @@
 package co.com.pragma.model.user;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 
 public class User {
-    private String id;
+    private BigInteger id;
     private String name;
     private String lastName;
     private LocalDate birthDate;
@@ -22,11 +23,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 
