@@ -11,14 +11,18 @@ spring:
       path: "/h2"
   profiles:
     include: null
-  adapters:
-    r2dbc:
-      host: "aaaa"
-      port: "aaaa"
-      database: "aaaa"
-      schema: "public"
-      username: "aaaa"
-      password: "aaaa"
+  r2dbc:
+    url: "r2dbc:postgresql://localhost:5432/tu_base"
+    username: "tu_usuario"
+    password: "tu_password"
+adapters:
+  r2dbc:
+    host: "localhost"
+    port: "5432"
+    database: "tu_base"
+    schema: "public"
+    username: "tu_usuario"
+    password: "tu_password"
 management:
   endpoints:
     web:
