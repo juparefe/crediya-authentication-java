@@ -1,35 +1,25 @@
-package co.com.pragma.r2dbc.entity;
+package co.com.pragma.api.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import org.springframework.data.relational.core.mapping.Table;
+import io.swagger.v3.oas.annotations.media.Schema;
 
-import java.math.BigInteger;
 import java.time.LocalDate;
 
-@Table("users")
-public class UserEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private BigInteger id;
+@Schema(name = "UserRequest", description = "Body para crear un nuevo usuario")
+public class UserRequest {
+    @Schema(example = "Juan Pablo")
     private String name;
+    @Schema(example = "Rendon")
     private String lastName;
+    @Schema(example = "1993-11-25")
     private LocalDate birthDate;
+    @Schema(example = "Carrera 1 # 2 - 3")
     private String address;
+    @Schema(example = "3211234567")
     private String phoneNumber;
-    @Column(unique = true)
+    @Schema(example = "juan@gmail.com")
     private String email;
+    @Schema(example = "100000.0")
     private Double salary;
-
-    public BigInteger getId() {
-        return id;
-    }
-
-    public void setId(BigInteger id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -85,19 +75,5 @@ public class UserEntity {
 
     public void setSalary(Double salary) {
         this.salary = salary;
-    }
-
-    @Override
-    public String toString() {
-        return "UserEntity{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", birthDate=" + birthDate +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", email='" + email + '\'' +
-                ", salary=" + salary +
-                '}';
     }
 }

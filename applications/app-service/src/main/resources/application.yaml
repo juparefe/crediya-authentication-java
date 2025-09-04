@@ -12,17 +12,17 @@ spring:
   profiles:
     include: null
   r2dbc:
-    url: "r2dbc:postgresql://localhost:5432/tu_base"
-    username: "tu_usuario"
-    password: "tu_password"
+    url: "r2dbc:postgresql://localhost:5432/crediya"
+    username: "postgres"
+    password: "1234"
 adapters:
   r2dbc:
     host: "localhost"
     port: "5432"
-    database: "tu_base"
+    database: "crediya"
     schema: "public"
-    username: "tu_usuario"
-    password: "tu_password"
+    username: "postgres"
+    password: "1234 "
 management:
   endpoints:
     web:

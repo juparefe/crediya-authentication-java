@@ -1,0 +1,13 @@
+<configuration>
+    <springProperty scope="context" name="APP" source="spring.application.name" defaultValue="app"/>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!-- %X{traceId} lee el valor que puso el filtro en MDC -->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}  %-5level ${APP} [%thread] %logger{36} traceId=%X{traceId} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
