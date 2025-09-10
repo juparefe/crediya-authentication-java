@@ -33,9 +33,8 @@ public class UserUseCaseTest {
 
     @Test
     void shouldErrorWhenValidationFails() {
-        // given: un usuario inválido (por ejemplo, sin email)
         User invalid = validUser();
-        invalid.setEmail(" "); // fuerza fallo de UserValidator
+        invalid.setEmail(" ");
 
         // when
         Mono<User> result = userUseCase.saveUser(invalid);

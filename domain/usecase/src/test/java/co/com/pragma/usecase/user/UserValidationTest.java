@@ -19,7 +19,7 @@ public class UserValidationTest {
     @Test
     void shouldThrowWhenNameIsBlank() {
         User u = new User();
-        u.setName(" "); // blanco
+        u.setName(" ");
         u.setLastName("Perez");
         u.setEmail("correo@valido.com");
         u.setSalary(1000.0);
@@ -35,7 +35,7 @@ public class UserValidationTest {
     void shouldThrowWhenLastNameIsBlank() {
         User u = new User();
         u.setName("Juan");
-        u.setLastName(""); // vacío
+        u.setLastName("");
         u.setEmail("correo@valido.com");
         u.setSalary(1000.0);
 
@@ -95,7 +95,7 @@ public class UserValidationTest {
         User u = new User();
         u.setName("Juan");
         u.setLastName("Perez");
-        u.setEmail("correo@invalido"); // falta dominio
+        u.setEmail("correo@invalido");
         u.setSalary(1000.0);
 
         IllegalArgumentException ex = assertThrows(

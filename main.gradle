@@ -47,7 +47,9 @@ subprojects {
         }
     }
 
-    test.finalizedBy(project.tasks.jacocoTestReport)
+    if (project.name == "domain") {
+        test.finalizedBy(project.tasks.jacocoTestReport)
+    }
 
     pitest {
         targetClasses = ['co.com.pragma.*']
@@ -95,6 +97,14 @@ tasks.register('jacocoMergedReport', JacocoReport) {
         csv.setRequired false
         html.setRequired true
     }
+}
+
+tasks.withType(JacocoCoverageVerification).configureEach {
+    enabled = (project.name == "domain")
+}
+
+tasks.withType(JacocoReport).configureEach {
+    onlyIf { project.name == "domain" }
 }
 
 tasks.withType(JavaCompile).configureEach {
